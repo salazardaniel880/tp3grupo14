@@ -1,38 +1,29 @@
 @extends('layout')
 
 @section('content')
-    <h1>Lista de Libros</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Categoría</th>
-                <th>Editorial</th>
-                <th>Fecha de Publicación</th>
-                <th>Páginas</th>
-                <th>País</th>
-                <th>Acciones</th> <!-- Agregado para los botones -->
-            </tr>
-        </thead>
-        <tbody>
+    <section class="flex flex-col justify-center items-center">
+        <h1 class="flex justify-center text-white text-5xl pt-10 pb-10">Lista de Libros</h1>
+        <div class="grid grid-cols-4 gap-4">
             @foreach ($books as $book)
-                <tr>
-                    <td>{{ $book->title }}</td>
-                    <td>{{ $book->author->name }}</td>
-                    <td>{{ $book->category->name }}</td>
-                    <td>{{ $book->publisher }}</td>
-                    <td>{{ $book->publication_date }}</td>
-                    <td>{{ $book->pages }}</td>
-                    <td>{{ $book->country }}</td>
-                    <td>
+                <div class="flex flex-col border border-slate-400 p-4 gap-4 rounded-lg">
+                    <h1 class="text-white text-center text-2xl">{{ $book->title }}</h1>
+                    <p class="text-white font-bold">Autor del libro: <span>{{ $book->author->name }}</span></p>
+                    <p class="text-white font-bold">Categoría: {{ $book->category->name }}</p>
+                    <p class="text-white font-bold">Editorial: {{ $book->publisher }}</p>
+                    <p class="text-white font-bold">Fecha: {{ $book->publication_date }}</p>
+                    <p class="text-white font-bold">N° páginas: {{ $book->pages }}</p>
+                    <p class="text-white font-bold">País: {{ $book->country }}</p>
+
+                    <button class="bg-red-700 text-white p-2 rounded-lg">
                         <a href="{{ route('posts.create', ['book_id' => $book->id, 'category_id' => $book->category->id]) }}"
                             class="btn btn-primary">Agregar Post</a>
+                    </button>
+                    <button class="bg-red-700 text-white p-2 rounded-lg">
                         <a href="{{ route('books.show_posts', ['book_id' => $book->id]) }}" class="btn btn-primary">Ver
                             Posts</a>
-                    </td>
-                </tr>
+                    </button>
+                </div>
             @endforeach
-        </tbody>
-    </table>
+        </div>
+    </section>
 @endsection

@@ -16,11 +16,12 @@ Route::middleware('auth')->group(function () {
 
     // Category Controller
     Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
-    Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::post('/categories/store', [CategoryController::class, 'store'])->name('categories.store');
     Route::get('/categories', [CategoryController::class, 'getAllCategories'])->name('categories.index');
 
     // Book Controller
-
+    Route::get('/books/create',[BookController::class,'create'])->name('books.create');
+    Route::post('/books/store', [PostController::class, 'store'])->name('books.store');
 
     // Post Controller
     Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');

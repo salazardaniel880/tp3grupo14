@@ -4,7 +4,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -25,7 +27,9 @@ class BookController extends Controller
 
     public function create()
     {
-        return view('books.create');
+        $categoria=Category::all();
+        $autores=Author::all();
+        return view('books.create',compact('categoria','autores'));
     }
 
     public function store(Request $request)
@@ -44,6 +48,6 @@ class BookController extends Controller
 
         Book::create($request->all());
 
-        return redirect()->route('books.index');
+        return redirect()->route('home');
     }
 }

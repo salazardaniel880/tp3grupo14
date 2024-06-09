@@ -24,6 +24,16 @@
                     </button>
                 </div>
             @endforeach
+            <button class="bg-red-700 text-white p-2 rounded-lg">
+                        <a href="{{ route('books.create') }}" class="btn btn-primary">
+                            libro nuevo
+                        </a>
+                    </button>
+                    <button class="bg-red-700 text-white p-2 rounded-lg">
+                        <a href="{{ route('categories.create') }}" class="btn btn-primary">
+                            nueva categoria
+                        </a>
+                    </button>
         </div>
     </section>
 @endsection

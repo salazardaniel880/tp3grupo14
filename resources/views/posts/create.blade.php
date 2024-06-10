@@ -22,8 +22,8 @@
                 <input class="w-full p-2 border border-gray-300 rounded" type="number" id="rating" name="rating"
                     min="1" max="5" required>
             </div>
-            <div class="flex justify-end">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded" type="submit">Agregar Post</button>
+            <div >
+                <button class="bg-red-700 text-white p-2 rounded-lg m-6" type="submit">Agregar Post</button>
             </div>
 
         </form>

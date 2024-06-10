@@ -10,6 +10,11 @@
                     </a>
                 </div>
             </div>
+            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('books.list')" :active="request()->routeIs('books.list')">
+                        <h1 class=" text-xl">Libros Neuquen </h1>
+                    </x-nav-link>
+                </div>
             @if (Auth::user())
                 <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ms-6">

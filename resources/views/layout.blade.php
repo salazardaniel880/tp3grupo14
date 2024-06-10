@@ -16,10 +16,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased  dark:bg-black">
     @include('header')
 
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-blue-500 dark:bg-black ">
         <!-- Page Content -->
         <main>
             @yield('content')

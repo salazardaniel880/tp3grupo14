@@ -6,7 +6,7 @@
         @if (count($posts) > 0)
             <div class="grid grid-cols-4 gap-4 p-4">
                 @foreach ($posts as $post)
-                    <div class="flex flex-col border border-slate-400 p-4 gap-4 rounded-lg items-center w-full">
+                    <div class="flex flex-col border border-slate-400 p-4 gap-4 bg-red-600 rounded-lg items-center w-full">
                         <h1 class="text-white text-center text-2xl">{{ $post->post_title }}</h1>
                         <div class="flex flex-col w-full">
                             <p class="flex w-full text-white">Comentario: {{ $post->comment }} </p>

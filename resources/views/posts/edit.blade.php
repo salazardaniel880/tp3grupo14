@@ -24,8 +24,8 @@
                     min="1" max="5" class="w-full p-2 border border-gray-300 rounded">
             </div>
 
-            <div class="flex justify-end">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>
+            <div >
+                <button type="submit" class="bg-red-700 text-white p-2 rounded-lg m-6">Actualizar</button>
             </div>
         </form>
     </section>

@@ -31,7 +31,7 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('libro.index')
+        return redirect()->route('books.list')
             ->with('success', 'Categoría creada exitosamente.');
     }
     public function preloadCategories()

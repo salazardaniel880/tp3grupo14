@@ -48,6 +48,6 @@ class BookController extends Controller
 
         Book::create($request->all());
 
-        return redirect()->route('home');
+        return redirect()->route('books.list');
     }
 }

@@ -3,7 +3,8 @@
 @section('content')
     <section class="flex flex-col justify-center items-center">
         <h1 class="flex justify-center text-white text-5xl pt-10 pb-10">Lista de Libros</h1>
-        <x-dropdown>
+        <div class="  justify-between ">
+        <x-dropdown class="m-16">
                     <x-slot name="trigger">
                         <button
                                 class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
@@ -28,10 +29,10 @@
                         @endforeach
                     </x-slot>
         </x-dropdown>
-        <x-dropdown>
+        <x-dropdown class="m-16">
                     <x-slot name="trigger">
                         <button
-                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150 mt-6">
                                 <div>
                                     autores
                                 </div>
@@ -53,7 +54,8 @@
                         @endforeach
                     </x-slot>
         </x-dropdown>
-        <div class="grid grid-cols-4 gap-4">
+        </div>
+        <div class="grid grid-cols-4 gap-4 mt-6">
             @foreach ($books as $book)
                 <div class="flex flex-col border border-black p-4 gap-4 rounded-lg bg-red-600">
                     <div class="h-16 w-full">

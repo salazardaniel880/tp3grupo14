@@ -12,10 +12,25 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function list()
+    public function list(Request $request)
     {
-        $books = Book::all();
-        return view('books.list', compact('books'));
+        $autor_id = $request->input('autor_id', '');
+        $id_category = $request->input('id_category', '');
+        $query = Book::query();
+
+        if ($autor_id) {
+            $query->where('author_id', $autor_id);
+        }
+
+        if ($id_category) {
+            $query->where('category_id', $id_category);
+        }
+
+        $books = $query->get();
+        $autor = Author::all();
+        $category = Category::all();
+
+        return view('books.list', compact('books', 'autor', 'category'));
     }
 
     public function showPosts($book_id)
@@ -49,5 +64,12 @@ class BookController extends Controller
         Book::create($request->all());
 
         return redirect()->route('books.list');
+    }
+    public function filtrarLibros(Request $request)
+    {
+        $autor_id = $request->input('autor_id');
+        $genero_id = $request->input('genero_id');
+
+      
     }
 }

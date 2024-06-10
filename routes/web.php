@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [BookController::class, 'list'])->name('books.list');
 Route::get('/books/show-posts/{book_id}', [BookController::class, 'showPosts'])->name('books.show_posts');
+Route::post('/books/filter', [BookController::class, 'filtrarLibros'])->name('books.filter');
 
 Route::get('/dashboard', function () {
     return view('books.list');

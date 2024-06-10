@@ -1,7 +1,5 @@
 <?php
 
-// app/Http/Controllers/BookController.php
-
 namespace App\Http\Controllers;
 
 use App\Models\Author;
@@ -42,9 +40,9 @@ class BookController extends Controller
 
     public function create()
     {
-        $categoria=Category::all();
-        $autores=Author::all();
-        return view('books.create',compact('categoria','autores'));
+        $categoria = Category::all();
+        $autores = Author::all();
+        return view('books.create', compact('categoria', 'autores'));
     }
 
     public function store(Request $request)
@@ -66,5 +64,4 @@ class BookController extends Controller
 
         return redirect()->route('books.list');
     }
-   
 }

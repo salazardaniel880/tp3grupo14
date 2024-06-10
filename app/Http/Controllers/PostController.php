@@ -64,4 +64,11 @@ class PostController extends Controller
 
         return redirect()->route('books.show_posts', $post->book_id)->with('success', 'Post actualizado exitosamente.');
     }
+    public function destroy( Post $post)
+    {
+        $this->authorize('update', $post);
+        
+        $post->delete();
+        return redirect()->route('books.list');
+    }
 }

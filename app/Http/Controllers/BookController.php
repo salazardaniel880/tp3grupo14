@@ -56,6 +56,7 @@ class BookController extends Controller
             'original_title' => 'nullable|string',
             'publisher' => 'required|string',
             'publication_date' => 'required|date',
+            'image' => 'required|string',
             'pages' => 'required|integer',
             'country' => 'required|string',
             'author_id' => 'required|exists:authors,id',
@@ -65,11 +66,5 @@ class BookController extends Controller
 
         return redirect()->route('books.list');
     }
-    public function filtrarLibros(Request $request)
-    {
-        $autor_id = $request->input('autor_id');
-        $genero_id = $request->input('genero_id');
-
-      
-    }
+   
 }

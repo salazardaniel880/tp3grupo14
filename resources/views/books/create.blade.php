@@ -15,6 +15,11 @@
                 <input type="text" class="w-full p-2 border border-gray-300 rounded" id="type" name="type" required>
             </div>
             <div class="mb-4">
+                <label for="image" class="block text-red-600 text-xl font-bold">Imagen</label>
+                <input type="text" class="w-full p-2 border border-gray-300 rounded" id="image" name="image"
+                    required>
+            </div>
+            <div class="mb-4">
                 <label for="author_id" class="text-red-600 pr-2 text-xl font-bold">Autor</label>
                 <select class="w-full p-2 border border-gray-300 rounded" id="author_id" name="author_id" required>
                     @foreach($autores as $autor)

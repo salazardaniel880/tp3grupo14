@@ -17,6 +17,9 @@
                         @if (Auth::check() && Auth::user()->id == $post->user_id)
                             <a href="{{ route('posts.edit', $post->id) }}"
                                 class="bg-blue-500 text-white px-4 py-2 rounded">Editar</a>
+
+                                <a href="{{ route('posts.destroy', $post->id) }}"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">eliminar</a>
                         @endif
                     </div>
                 @endforeach

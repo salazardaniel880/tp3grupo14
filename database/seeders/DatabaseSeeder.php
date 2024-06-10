@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call([
-            aurhorSeed::class,
+            AuthorSeeder::class,
             categorySeed::class,
-            libroSeed::class
+            BookSeeder::class
         ]);
     }
 }

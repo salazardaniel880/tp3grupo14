@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
     // Post Controller
     Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::get('/posts/{post}/destroy', [PostController::class, 'destroy'])->name('posts.destroy');
     Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
     Route::get('/posts/create/{book_id}/{category_id}', [PostController::class, 'create'])->name('posts.create');
     Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');

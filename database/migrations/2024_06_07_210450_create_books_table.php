@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('type');
             $table->unsignedBigInteger('category_id');
             $table->string('title');
+            $table->string('image');
             $table->string('original_title')->nullable();
             $table->string('publisher');
             $table->date('publication_date');
